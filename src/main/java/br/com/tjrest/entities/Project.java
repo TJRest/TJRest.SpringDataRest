@@ -60,7 +60,7 @@ public class Project implements Serializable{
 
 	private long endDateMili;
 	
-	@OneToMany(cascade=CascadeType.ALL)
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinTable(
 	        name = "project_accounts",
 	        joinColumns = @JoinColumn(name = "project_id"),
