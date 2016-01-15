@@ -1,0 +1,151 @@
+﻿-- Table: tjrest."Text"
+
+-- DROP TABLE tjrest."Text";
+
+CREATE TABLE tjrest."text"
+(
+  "text_id" integer NOT NULL,
+  value text,
+  "field_order" text,
+  pattern text,
+  CONSTRAINT "text_pkey" PRIMARY KEY ("text_id")
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE tjrest."text"
+  OWNER TO tjrest;
+
+
+-- Table: tjrest."Account"
+
+-- DROP TABLE tjrest."Account";
+
+CREATE TABLE tjrest."account"
+(
+  "account_id" integer NOT NULL,
+  name text,
+  CONSTRAINT "account_pkey" PRIMARY KEY ("account_id")
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE tjrest."account"
+  OWNER TO tjrest;
+
+
+
+-- Table: tjrest."AccountRel"
+
+-- DROP TABLE tjrest."AccountRel";
+
+CREATE TABLE tjrest."account_rel"
+(
+  "acc_owner_id" integer NOT NULL,
+  "account_id" integer NOT NULL,
+  CONSTRAINT pk PRIMARY KEY ("acc_owner_id", "account_id"),
+  CONSTRAINT "acc_owner_id" FOREIGN KEY ("acc_owner_id")
+      REFERENCES tjrest."account" ("account_id") MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT "account_id" FOREIGN KEY ("account_id")
+      REFERENCES tjrest."account" ("account_id") MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE tjrest."account_rel"
+  OWNER TO tjrest;
+
+
+-- Table: tjrest."Project"
+
+-- DROP TABLE tjrest."Project";
+
+CREATE TABLE tjrest."project"
+(
+  "project_id" integer NOT NULL,
+  alias text,
+  currency text,
+  timezone text,
+  "currency_format" text,
+  "time_format" text,
+  "number_format" text,
+  "start_date_mili" integer,
+  "end_date_mili" integer,
+  "text_id" integer,
+  CONSTRAINT "projectPk" PRIMARY KEY ("project_id"),
+  CONSTRAINT "text_id" FOREIGN KEY ("text_id")
+      REFERENCES tjrest."text" ("text_id") MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE tjrest."project"
+  OWNER TO tjrest;
+
+
+-- Table: tjrest."ProjectAccounts"
+
+-- DROP TABLE tjrest."ProjectAccounts";
+
+CREATE TABLE tjrest."project_accounts"
+(
+  "project_id" integer NOT NULL,
+  "account_id" integer NOT NULL,
+  CONSTRAINT "project_account_pk" PRIMARY KEY ("project_id", "account_id"),
+  CONSTRAINT "account_fk" FOREIGN KEY ("account_id")
+      REFERENCES tjrest."account" ("account_id") MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT "project_fk" FOREIGN KEY ("project_id")
+      REFERENCES tjrest."project" ("project_id") MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE tjrest."project_accounts"
+  OWNER TO tjrest;
+
+
+-- Sequence: tjrest.text_id_seq
+
+-- DROP SEQUENCE tjrest.text_id_seq;
+
+CREATE SEQUENCE tjrest.text_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 1
+  CACHE 1;
+ALTER TABLE tjrest.text_id_seq
+  OWNER TO tjrest;
+
+
+-- Sequence: tjrest.project_id_seq
+
+-- DROP SEQUENCE tjrest.project_id_seq;
+
+CREATE SEQUENCE tjrest.project_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 1
+  CACHE 1;
+ALTER TABLE tjrest.project_id_seq
+  OWNER TO tjrest;
+
+
+-- Sequence: tjrest.account_id_seq
+
+-- DROP SEQUENCE tjrest.account_id_seq;
+
+CREATE SEQUENCE tjrest.account_id_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 1
+  CACHE 1;
+ALTER TABLE tjrest.account_id_seq
+  OWNER TO tjrest;

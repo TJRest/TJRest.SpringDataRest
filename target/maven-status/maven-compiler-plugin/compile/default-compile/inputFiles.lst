@@ -1,3 +1,6 @@
-/Users/Laroca/Documents/SpringDataRest/tjrest-webapp/src/main/java/Application.java
-/Users/Laroca/Documents/SpringDataRest/tjrest-webapp/src/main/java/PersonRepository.java
-/Users/Laroca/Documents/SpringDataRest/tjrest-webapp/src/main/java/Person.java
+/home/laroca/JavaDevelopment/tjrest/TJRest.SpringDataRest/src/main/java/br/com/tjrest/Application.java
+/home/laroca/JavaDevelopment/tjrest/TJRest.SpringDataRest/src/main/java/br/com/tjrest/entities/Project.java
+/home/laroca/JavaDevelopment/tjrest/TJRest.SpringDataRest/src/main/java/br/com/tjrest/repositories/ProjectRepository.java
+/home/laroca/JavaDevelopment/tjrest/TJRest.SpringDataRest/src/main/java/br/com/tjrest/repositories/AccountRepository.java
+/home/laroca/JavaDevelopment/tjrest/TJRest.SpringDataRest/src/main/java/br/com/tjrest/entities/Text.java
+/home/laroca/JavaDevelopment/tjrest/TJRest.SpringDataRest/src/main/java/br/com/tjrest/entities/Account.java
