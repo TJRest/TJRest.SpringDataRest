@@ -1,4 +1,4 @@
-package br.com.tjrest.entities.children;
+package org.taskjuggler.rest.entities.children;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -20,6 +20,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.springframework.data.rest.core.annotation.RestResource;
+import org.taskjuggler.rest.entities.parents.Container;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,26 +28,26 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity 
-@Table(name="project")
+//@Table(name="project")
 //@JsonHyperSchema(pathStart = "/profile/projects/", 
 //	links = {  
 //	    @Link(href = "{projectId}/accounts", rel = "account", targetSchema = Account.class)
 //	}
 //)
 @Inheritance(strategy=InheritanceType.JOINED)
-public class Project implements Serializable{
+public class Project extends Container implements Serializable{
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO, generator="project_id_seq_gen")
-	@SequenceGenerator(name="project_id_seq_gen", sequenceName="project_id_seq")
-	@Column(name="project_id")
-	private Long projectId; 
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.AUTO, generator="project_id_seq_gen")
+//	@SequenceGenerator(name="project_id_seq_gen", sequenceName="project_id_seq")
+//	@Column(name="project_id")
+//	private Long projectId; 
 
 	private String alias;
 	
-	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	@JoinColumn(name="text_id")
-	private Text name;
+//	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+//	@JoinColumn(name="text_id")
+//	private Text name;
 	
 	private String currency;
 
@@ -62,13 +63,5 @@ public class Project implements Serializable{
 
 	private long endDateMili;
 	
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	@JoinTable(
-	        name = "project_accounts",
-	        joinColumns = @JoinColumn(name = "project_id"),
-	        inverseJoinColumns = @JoinColumn(name = "account_id")
-	)
-	@RestResource(rel="{projectId}/accounts", path="{projectId}/accounts", exported=false)
-	private Set<Account> accounts;
 	
 }

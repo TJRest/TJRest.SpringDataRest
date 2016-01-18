@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: tjrest-webapp Maven Webapp
 Implementation-Version: 1
-Built-By: laroca
+Built-By: Laroca
 Implementation-Vendor-Id: com.tjrest.app
 Build-Jdk: 1.8.0_65
 Created-By: Maven Integration for Eclipse

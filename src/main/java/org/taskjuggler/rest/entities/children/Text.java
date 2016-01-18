@@ -1,4 +1,4 @@
-package br.com.tjrest.entities.children;
+package org.taskjuggler.rest.entities.children;
 
 import java.io.Serializable;
 
@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity 
-@Table(name="text")
+//@Table(name="text")
 public class Text implements Serializable {
 
 	@Id

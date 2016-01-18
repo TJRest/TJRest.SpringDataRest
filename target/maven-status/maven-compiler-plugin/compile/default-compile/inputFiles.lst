@@ -1,6 +1,8 @@
-/home/laroca/JavaDevelopment/tjrest/TJRest.SpringDataRest/src/main/java/br/com/tjrest/Application.java
-/home/laroca/JavaDevelopment/tjrest/TJRest.SpringDataRest/src/main/java/br/com/tjrest/entities/Project.java
-/home/laroca/JavaDevelopment/tjrest/TJRest.SpringDataRest/src/main/java/br/com/tjrest/repositories/ProjectRepository.java
-/home/laroca/JavaDevelopment/tjrest/TJRest.SpringDataRest/src/main/java/br/com/tjrest/repositories/AccountRepository.java
-/home/laroca/JavaDevelopment/tjrest/TJRest.SpringDataRest/src/main/java/br/com/tjrest/entities/Text.java
-/home/laroca/JavaDevelopment/tjrest/TJRest.SpringDataRest/src/main/java/br/com/tjrest/entities/Account.java
+/Users/Laroca/Documents/workspace/TJRest/TJRest.SpringDataRest/src/main/java/org/taskjuggler/rest/Application.java
+/Users/Laroca/Documents/workspace/TJRest/TJRest.SpringDataRest/src/main/java/org/taskjuggler/rest/entities/parents/Property.java
+/Users/Laroca/Documents/workspace/TJRest/TJRest.SpringDataRest/src/main/java/org/taskjuggler/rest/entities/parents/Container.java
+/Users/Laroca/Documents/workspace/TJRest/TJRest.SpringDataRest/src/main/java/org/taskjuggler/rest/entities/children/Account.java
+/Users/Laroca/Documents/workspace/TJRest/TJRest.SpringDataRest/src/main/java/org/taskjuggler/rest/repositories/AccountRepository.java
+/Users/Laroca/Documents/workspace/TJRest/TJRest.SpringDataRest/src/main/java/org/taskjuggler/rest/repositories/ProjectRepository.java
+/Users/Laroca/Documents/workspace/TJRest/TJRest.SpringDataRest/src/main/java/org/taskjuggler/rest/entities/children/Text.java
+/Users/Laroca/Documents/workspace/TJRest/TJRest.SpringDataRest/src/main/java/org/taskjuggler/rest/entities/children/Project.java
