@@ -1,4 +1,4 @@
-package br.com.tjrest.entities;
+package br.com.tjrest.entities.children;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -18,6 +18,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -66,6 +68,7 @@ public class Project implements Serializable{
 	        joinColumns = @JoinColumn(name = "project_id"),
 	        inverseJoinColumns = @JoinColumn(name = "account_id")
 	)
+	@RestResource(rel="{projectId}/accounts", path="{projectId}/accounts", exported=false)
 	private Set<Account> accounts;
 	
 }

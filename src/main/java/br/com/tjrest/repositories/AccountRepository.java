@@ -4,7 +4,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.config.Projection;
 
-import br.com.tjrest.entities.Account;
+import br.com.tjrest.entities.children.Account;
 
 
 @Projection(types = { Account.class })

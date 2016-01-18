@@ -1,4 +1,4 @@
-package br.com.tjrest.entities;
+package br.com.tjrest.entities.children;
 
 import java.io.Serializable;
 
